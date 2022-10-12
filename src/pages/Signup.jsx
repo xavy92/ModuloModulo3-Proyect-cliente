@@ -41,43 +41,79 @@ export default function Signup({ authenticate }) {
   }
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleFormSubmission} className="auth__form">
-        <label htmlFor="input-username">Username</label>
-        <input
-          id="input-username"
-          type="text"
-          name="username"
-          placeholder="Text"
-          value={username}
-          onChange={handleInputChange}
-          required
-        />
 
-        <label htmlFor="input-password">Password</label>
-        <input
-          id="input-password"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={handleInputChange}
-          required
-          minLength="8"
-        />
 
-        {error && (
-          <div className="error-block">
-            <p>There was an error submiting the form:</p>
-            <p>{error.message}</p>
+    <section className="hero has-background-white-ter is-fullheight">
+      <div class='hero-body'>
+        <div className="container">
+          <div className="columns is-centered">
+            <div class='column is-5-tablet is-4-desktop'>
+              <form onSubmit={handleFormSubmission} className="signup__form">
+                  <h1 class='title is-3'>Sign Up</h1>
+                  <div className="field">
+                    <label htmlFor="input-username" class='label'>Username</label>
+                    <div className="control is-medium has-icon-left">
+                      <input className="input "  
+                        id="input-username"
+                        type="text"
+                        name="username"
+                        placeholder="Text"
+                        value={username}
+                        onChange={handleInputChange}
+                        required/>
+                      </div>
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="input-username" class='label'>Lastname</label>
+                    <div className="control is-medium has-icon-left">
+                      <input className="input "  
+                        id="input-username"
+                        type="text"
+                        name="username"
+                        placeholder="Text"
+                        value={username}
+                        onChange={handleInputChange}
+                        required/>
+                      </div>
+                  </div>
+
+                  <div className="field">
+                    <label htmlFor="input-username" class='label'>Password</label>
+                    <div className="control has-icon-left">
+                      <input
+                      class='input'
+                      id="input-password"
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={handleInputChange}
+                      required
+                      minLength="8"
+                      />
+                      {error && (
+                        <div className="error-block">
+                          <p>There was an error submiting the form:</p>
+                          <p>{error.message}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>  
+                  <div className="field">
+                  <button class="button is-success" type="submit">
+                  Registrar
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        )}
+        </div>
+      </div>
+    </section>
 
-        <button className="button__submit" type="submit">
-          Submit
-        </button>
-      </form>
-    </div>
+
+
+    
   );
 }

@@ -5,6 +5,18 @@ import Navbar from "./components/Navbar/Navbar";
 import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
+import HomePage from "./pages/HomePage";
+import LogIn from "./pages/LogIn";
+import Signup from "./pages/Signup"
+import Perfil from "./pages/Perfil";
+import "bulma/css/bulma.min.css"
+import Footer from "./components/Footer";
+import Pedidos from "./pages/Pedidos";
+import ProductosCar from "./pages/ProductosCar.js";
+import Detalles from "./pages/Detalles";
+import Formulario from "./pages/Formulario";
+
+
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -53,10 +65,28 @@ export default function App() {
     <div className="App">
       <Navbar handleLogout={handleLogout} user={user} />
       <Routes>
-        {routes({ user, authenticate, handleLogout }).map((route) => (
+        {/* {routes({ user, authenticate, handleLogout }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
-        ))}
+        ))} */}
+      <Route path="/" element={<HomePage />}/>
+      <Route path="/auth/login" element={<LogIn authenticate={authenticate} />}/>
+      <Route path="/auth/signup" element={<Signup authenticate={authenticate} />} />
+      <Route path="/perfil" element={<Perfil />}/>
+      {/* <Route path="/pedidos" element={<Pedidos />}/> */}
+      <Route path="/productos" element={<ProductosCar />}/>
+      <Route path="/detalles/:id" element={<Detalles />}/>
+      <Route path="/nuevoPro" element={<Formulario />}/>
+      {/* ruta de mis productos con sus componentes 
+      listado de productos, formulario para agregar un nuevo producto, vista a detalle de un producto
+      vista para editar el producto.
+
+      */}
+      {/* <Route path="/auth/signup" element={<Signup />}/>
+      <Route path="/auth/signup" element={<Signup />}/> */}
+     
       </Routes>
+      <Footer />
+
     </div>
   );
 }

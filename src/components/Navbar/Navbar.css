@@ -8,8 +8,12 @@ nav {
 }
 
 .nav__projectName {
-  color: #e4f9ff;
+  color: orange;
   text-decoration: none;
+}
+
+.nav__projectName:hover {
+  color: orange;
 }
 
 .authLink {
