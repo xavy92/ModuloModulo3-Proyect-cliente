@@ -8,9 +8,10 @@ import * as USER_HELPERS from "../utils/userToken";
 export default function Signup({ authenticate }) {
   const [form, setForm] = useState({
     username: "",
+    email: "",
     password: "",
   });
-  const { username, password } = form;
+  const { username, email, password } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ export default function Signup({ authenticate }) {
     event.preventDefault();
     const credentials = {
       username,
+      email,
       password,
     };
     signup(credentials).then((res) => {
@@ -65,14 +67,14 @@ export default function Signup({ authenticate }) {
                   </div>
 
                   <div className="field">
-                    <label htmlFor="input-username" class='label'>Lastname</label>
+                    <label htmlFor="input-username" class='label'>Email</label>
                     <div className="control is-medium has-icon-left">
                       <input className="input "  
                         id="input-username"
                         type="text"
-                        name="username"
+                        name="email"
                         placeholder="Text"
-                        value={username}
+                        value={email}
                         onChange={handleInputChange}
                         required/>
                       </div>

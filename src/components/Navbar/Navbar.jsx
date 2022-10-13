@@ -8,7 +8,7 @@ const Navbar = (props) => {
   return (
     <nav>
       <Link to={"/"}  className="nav__projectName">
-        {CONSTS.CAPITALIZED_APP} - Meat Store
+        {CONSTS.CAPITALIZED_APP} Nuestro Mundo De Libros
       </Link>
 
       <div className="nav__authLinks">
@@ -16,14 +16,14 @@ const Navbar = (props) => {
         {props.user ? (
           <>
             <Link to={PATHS.PROTECTEDPAGE} className="authLink">
-              Protected Page
+              {props.user.username}
             </Link>
             <button className="nav-logoutbtn" onClick={props.handleLogout}>
               Logout
             </button>
-            <button className="nav-logoutbtn" onClick={props.handleLogout}>
+            {/* <button className="nav-logoutbtn" onClick={props.handleLogout}>
               Logout
-            </button>
+            </button> */}
           </>
         ) : (
           <>

@@ -3,17 +3,17 @@ nav {
   padding: 1em;
   justify-content: space-around;
   flex-wrap: wrap;
-  background: #282c34;
+  background:#c07458de;
   font-weight: 600;
 }
 
 .nav__projectName {
-  color: orange;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 .nav__projectName:hover {
-  color: orange;
+  color: rgb(255, 255, 255);
 }
 
 .authLink {
@@ -48,5 +48,5 @@ nav {
 
 .nav-logoutbtn:hover {
   transform: scale(1.05);
-  background-color: #d13e3e;
+  background-color: #c07458de;
 }

@@ -7,8 +7,9 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 
-export default function SplitScreen() {
+export default function Home() {
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -27,18 +28,18 @@ export default function SplitScreen() {
                 bg: 'blue.400',
                 zIndex: -1,
               }}>
-              Carniceria virtual
+              Bienvenido a un mundo de libros 
             </Text>
             <br />{' '}
             <Text color={'blue.400'} as={'span'}>
-              Lo mejor de lo mejor
+            Un lector vive mil vidas antes de morir. La persona que nunca lee solamente una
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-            The project board is an exclusive resource for contract work. It's
-            perfect for freelancers, agencies, and moonlighters.
+            En nuestra plataforma podras visualizar diferentes libros, contando con una pequeña reseña de ellos.
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
+            <Link to={"/nuevoLibro"}>
             <Button
               rounded={'full'}
               bg={'blue.400'}
@@ -46,9 +47,12 @@ export default function SplitScreen() {
               _hover={{
                 bg: 'blue.500',
               }}>
-              Crear Pedido
+              Crear Libro
             </Button>
-            <Button rounded={'full'}>hola</Button>
+            </Link>
+            <Link to={"/libros"}>
+            <Button rounded={'full'}>Mis libros</Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>
@@ -57,7 +61,7 @@ export default function SplitScreen() {
           alt={'Login Image'}
           objectFit={'cover'}
           src={
-            "https://i.ibb.co/0Vyt7jS/images.jpg"          }
+            "https://i.ibb.co/HphvJcx/biblioteca.jpg"          }
         />
       </Flex>
     </Stack>

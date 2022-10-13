@@ -3,18 +3,18 @@ import { Routes, Route } from "react-router-dom";
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import { getLoggedIn, logout } from "./services/auth";
-import routes from "./config/routes";
+// import routes from "./config/routes";
 import * as USER_HELPERS from "./utils/userToken";
 import HomePage from "./pages/HomePage";
 import LogIn from "./pages/LogIn";
 import Signup from "./pages/Signup"
-import Perfil from "./pages/Perfil";
+// import Perfil from "./pages/Perfil";
 import "bulma/css/bulma.min.css"
 import Footer from "./components/Footer";
-import Pedidos from "./pages/Pedidos";
-import ProductosCar from "./pages/ProductosCar.js";
 import Detalles from "./pages/Detalles";
 import Formulario from "./pages/Formulario";
+import Editar from "./pages/Editar";
+import Libros from "./pages/Libros";
 
 
 
@@ -71,14 +71,17 @@ export default function App() {
       <Route path="/" element={<HomePage />}/>
       <Route path="/auth/login" element={<LogIn authenticate={authenticate} />}/>
       <Route path="/auth/signup" element={<Signup authenticate={authenticate} />} />
-      <Route path="/perfil" element={<Perfil />}/>
+      {/* <Route path="/perfil" element={<Perfil />}/> */}
       {/* <Route path="/pedidos" element={<Pedidos />}/> */}
-      <Route path="/productos" element={<ProductosCar />}/>
-      <Route path="/detalles/:id" element={<Detalles />}/>
-      <Route path="/nuevoPro" element={<Formulario />}/>
-      {/* ruta de mis productos con sus componentes 
-      listado de productos, formulario para agregar un nuevo producto, vista a detalle de un producto
-      vista para editar el producto.
+      <Route path="/libros" element={<Libros />}/>
+      <Route path="/libros/:id" element={<Detalles />}/>
+      <Route path="/nuevoLibro" element={<Formulario />}/>
+      <Route path="/libros/edit/:id" element={<Editar />}/>
+      
+
+      {/* ruta de mis libros con sus componentes 
+      listado de libros, formulario para agregar un nuevo producto, vista a detalle de un libro
+      vista para editar el libro.
 
       */}
       {/* <Route path="/auth/signup" element={<Signup />}/>

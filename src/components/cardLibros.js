@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const IMAGE =
   "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80";
 
-export default function CardProduct(props) {
+export default function CardLibros(props) {
   console.log(props)
   return (
     <Center py={12}>
@@ -55,28 +55,28 @@ export default function CardProduct(props) {
             height={230}
             width={282}
             objectFit={"cover"}
-            src={props.title}
+            src={props.img}
           />
         </Box>
         <Stack pt={10} align={"center"}>
-          <Link to={`/detalles/${props._id}`}>
+          <Link to={`/libros/${props._id}`}>
             <Text
               color={"gray.500"}
-              fontSize={"sm"}
+              fontSize={"2xl"}
               textTransform={"uppercase"}
             >
-              Detalles
+              {props.title}
             </Text>
-            <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-              Nice Chair, pink
+            <Heading fontSize={"sm"} fontFamily={"body"} fontWeight={500}>
+             {props.description}
             </Heading>
             <Stack direction={"row"} align={"center"}>
               <Text fontWeight={800} fontSize={"xl"}>
-                $57
+                ${props.precio}
               </Text>
-              <Text textDecoration={"line-through"} color={"gray.600"}>
+              {/* <Text textDecoration={"line-through"} color={"gray.600"}>
                 $199
-              </Text>
+              </Text> */}
             </Stack>
           </Link>
         </Stack>
