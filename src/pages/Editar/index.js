@@ -17,7 +17,7 @@ const Editar = (props) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get(`http://localhost:5005/api/libro/${id}`)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/api/libro/${id}`)
     .then((response) => {
         const oneLibro = response.data
         setTitle(oneLibro.title)
@@ -33,14 +33,14 @@ const Editar = (props) => {
     e.preventDefault()
     const requestBody = {title, description, img, precio}
 
-    axios.put(`http://localhost:5005/api/libro/${id}`, requestBody)
+    axios.put(`${process.env.REACT_APP_SERVER_URL}/api/libro/${id}`, requestBody)
     .then((response) => {
         navigate(`/libros/${id}`)
     })
   }
 
   const deleteLibro = () => {
-    axios.delete(`http://localhost:5005/api/libro/${id}`)
+    axios.delete(`${process.env.REACT_APP_SERVER_URL}/api/libro/${id}`)
     .then(() => {
         console.log("elimidado")
 

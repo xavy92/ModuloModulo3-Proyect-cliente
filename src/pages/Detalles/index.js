@@ -20,7 +20,7 @@ export default function Detalles() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5005/api/libro/${id}`)
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/libro/${id}`)
       .then((respuesta) => setLibro(respuesta.data))
       .catch((err) => console.log(err));
   }, []);

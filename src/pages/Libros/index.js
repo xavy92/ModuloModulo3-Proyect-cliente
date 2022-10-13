@@ -11,7 +11,7 @@ const Libros = () => {
 
   const getAllLibros = () => {
     axios
-      .get("http://localhost:5005/api/libro")
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/libro`)
       .then((response) => setLibros(response.data))
       .catch((error) => console.log(error));
   };
