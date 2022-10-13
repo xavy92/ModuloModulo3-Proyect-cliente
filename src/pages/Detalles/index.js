@@ -59,7 +59,7 @@ export default function Detalles() {
             color={useColorModeValue("gray.700", "gray.400")}
             px={3}
           >
-            Aprox librerias ${libro.precio}
+            Aprox ${libro.precio}
             
           </Text>
           <Stack align={"center"} justify={"center"} direction={"row"} mt={6}>
@@ -115,9 +115,15 @@ export default function Detalles() {
             >
               <Link to={`/libros/edit/${id}`}>Editar</Link>
             </Button>
+
           </Stack>
         </Stack>
       </Stack>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </Center>
+       
   );
 }

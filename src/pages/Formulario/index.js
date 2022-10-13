@@ -31,30 +31,46 @@ const Formulario = () => {
   };
 
   return (
+  
+
     <div className="form">
-       <h1>Agrega tu nuevo libro</h1>
+        <br></br>
+        <br></br>
+       <h1>AGREGA TU NUEVO LIBRO A RECOMENDAR</h1>
+       <br></br>
+       <br></br>
+       
       <form  onSubmit={crearLibro} >
         <Input
-        width={300}
+        
           placeholder="Titulo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+        <br></br>
+        <br></br>
         <Input
           placeholder="Descripcion"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+        <br></br>
+        <br></br>
         <Input
           placeholder="Url de la foto"
           value={img}
           onChange={(e) => setImg(e.target.value)}
         />
+        <br></br>
+        <br></br>
         <Input
           placeholder="Precio aprox"
           value={precio}
           onChange={(e) => setPrecio(e.target.value)}
         />
+        <br></br>
+        <br></br>
+        <br></br>
         <Button
           type="submit"
           rightIcon={<ArrowForwardIcon />}
@@ -63,6 +79,9 @@ const Formulario = () => {
         >
           Registrar
         </Button>
+        <br></br>
+        <br></br>
+        <br></br>
       </form>
     </div>
   );

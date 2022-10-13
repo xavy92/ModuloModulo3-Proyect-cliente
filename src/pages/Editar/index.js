@@ -53,28 +53,46 @@ const Editar = (props) => {
 
   return (
     <div>
-               <h1>Agrega tu nuevo producto</h1>
+      <br></br>
+      <br></br>
+               <h1>EDITA TU LIBRO</h1>
+
+               
       <form  onSubmit={handleFormSubmit} >
+      <br></br>
+      <br></br>
+      <h1>TItulo</h1>
         <Input
           placeholder="Titulo"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+           <br></br>
+           <br></br>
+           <h1>Descripciòn</h1>
         <Input
           placeholder="Descripcion"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
+           <br></br>
+           <br></br>
+           <h1>URL de la imagen de la portada </h1>
         <Input
           placeholder="Url de la foto"
           value={img}
           onChange={(e) => setImg(e.target.value)}
         />
+           <br></br>
+           <br></br>
+           <h1>Precio aproximado en librerias</h1>
         <Input
           placeholder="Precio"
           value={precio}
           onChange={(e) => setPrecio(e.target.value)}
         />
+           <br></br>
+           <br></br>
         <Button
           type="submit"
         //   rightIcon={}
@@ -92,6 +110,9 @@ const Editar = (props) => {
         >
           Borrar
         </Button>
+        <br></br>
+        <br></br>
+        <br></br>
       </form>
     </div>
   )
