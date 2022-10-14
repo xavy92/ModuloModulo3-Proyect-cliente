@@ -18,7 +18,7 @@ const Formulario = () => {
   const crearLibro = (evento) => {
     evento.preventDefault();
     axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/api/libro`, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/libro`, {
         title,
         description,
         img,
@@ -79,7 +79,6 @@ const Formulario = () => {
         >
           Registrar
         </Button>
-        <br></br>
         <br></br>
         <br></br>
       </form>
